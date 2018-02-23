@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VuelosUI", "VuelosUI\VuelosUI.csproj", "{1844AD93-8BA4-4F00-9D6D-C3970456D917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vuelos.DATA", "Vuelos.DATA\Vuelos.DATA.csproj", "{A2C753D0-81D5-45FD-B9BC-994504B1AD50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vuelos.DS", "Vuelos.DS\Vuelos.DS.csproj", "{8F3AB225-4537-488B-BB22-96EC57C51E0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1844AD93-8BA4-4F00-9D6D-C3970456D917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1844AD93-8BA4-4F00-9D6D-C3970456D917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1844AD93-8BA4-4F00-9D6D-C3970456D917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1844AD93-8BA4-4F00-9D6D-C3970456D917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C753D0-81D5-45FD-B9BC-994504B1AD50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C753D0-81D5-45FD-B9BC-994504B1AD50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C753D0-81D5-45FD-B9BC-994504B1AD50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C753D0-81D5-45FD-B9BC-994504B1AD50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F3AB225-4537-488B-BB22-96EC57C51E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3AB225-4537-488B-BB22-96EC57C51E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3AB225-4537-488B-BB22-96EC57C51E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3AB225-4537-488B-BB22-96EC57C51E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
