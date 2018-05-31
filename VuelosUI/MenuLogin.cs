@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vuelos.DATA;
 
+
 namespace VuelosUI
 {
     public partial class MenuLogin  : MetroFramework.Forms.MetroForm
     {
+        //Mi contraseña sara admin y para oracle ORACLE01
         public static Usuario UsuarioGlobal = new Usuario();
         public static string Correo;
         public MenuLogin()
@@ -33,21 +35,54 @@ namespace VuelosUI
                     {
                         UsuarioGlobal = Singleton.opUsuarios.buscarUsuarioCorreo(txtcorreo.Text);
                         Correo = UsuarioGlobal.Correo;
-                        if (UsuarioGlobal.contra == txtcontra.Text && UsuarioGlobal.id_rol == 1)
+                        var data = Encriptacion.Encriptar(txtcontra.Text, Encriptacion.Llave);
+                        if (UsuarioGlobal.contra == data && UsuarioGlobal.id_rol == 1)
                         {
 
+                        VistaAdmin.VistaAdmin admi = new VistaAdmin.VistaAdmin();
+                           admi.Show();
+                           this.Hide();
+                               
+                            Usuario usu = new Usuario()
+                            {
+                                id_user = UsuarioGlobal.id_user,
+                                Correo = UsuarioGlobal.Correo,
+                                id_rol = UsuarioGlobal.id_rol,
+                                Nombre = UsuarioGlobal.Nombre,
+                                Apellidos = UsuarioGlobal.Apellidos,
+                                Direccion = UsuarioGlobal.Direccion,
+                                //contra=txtcontra.Text,
+                                contra = Encriptacion.Encriptar(txtcontra.Text, Encriptacion.Llave),
+                                Cedula=UsuarioGlobal.Cedula
 
+                             
+                            };
+                            //Singleton.opUsuarios.ActualizarUsuarios(usu);
+                           
+                       
 
-
-                            VistaAdmin.VistaAdmin ad = new VistaAdmin.VistaAdmin();
-                            ad.Show();
-                            this.Hide();
-
+                      
 
                         }
-                        else if (UsuarioGlobal.contra == txtcontra.Text && UsuarioGlobal.id_rol == 2)
+                        
+                        else if (UsuarioGlobal.contra == data && UsuarioGlobal.id_rol == 2)
                         {
-                            VistaUsuario.frm_user us = new VistaUsuario.frm_user();
+                            Encriptacion.Decriptar(UsuarioGlobal.contra, Encriptacion.Llave);
+                            Usuario usu = new Usuario()
+                            {
+                                id_user = UsuarioGlobal.id_user,
+                                Correo = UsuarioGlobal.Correo,
+                                id_rol = UsuarioGlobal.id_rol,
+                                Nombre = UsuarioGlobal.Nombre,
+                                Apellidos = UsuarioGlobal.Apellidos,
+                                Direccion = UsuarioGlobal.Direccion,
+                                contra = Encriptacion.Encriptar(txtcontra.Text, Encriptacion.Llave),
+                                Cedula = UsuarioGlobal.Cedula
+
+
+                            };
+                            //Singleton.opUsuarios.ActualizarUsuarios(usu);
+                            VistaUsuario.VistaUsuario us = new VistaUsuario.VistaUsuario();
                             us.Show();
                             this.Hide();
 
@@ -75,6 +110,7 @@ namespace VuelosUI
             }
             catch
             {
+               
                 
             }
 
@@ -93,5 +129,11 @@ namespace VuelosUI
             }
         }
 
+        private void lkb_olvide_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            OlvideContraseña olv = new OlvideContraseña();
+            olv.Show();
+        }
     }
 }

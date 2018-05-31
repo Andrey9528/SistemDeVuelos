@@ -52,5 +52,6 @@ namespace Vuelos.DS.Metodos
         {
             return _db.Select<Rol>();
         }
+
     }
 }

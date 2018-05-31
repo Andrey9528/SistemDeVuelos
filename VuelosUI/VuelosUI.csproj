@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +50,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Referencias\Oracle.DataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="ServiceStack.Common">
       <HintPath>..\Referencias\ServiceStack.Common.dll</HintPath>
     </Reference>
@@ -65,8 +67,15 @@
       <HintPath>..\Referencias\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,14 +94,68 @@
     <Compile Include="MenuLogin.Designer.cs">
       <DependentUpon>MenuLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="OlvideContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OlvideContraseña.Designer.cs">
+      <DependentUpon>OlvideContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Singleton.cs" />
+    <Compile Include="Validaciones.cs" />
+    <Compile Include="VistaAdmin\ActualizarAvion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarAvion.Designer.cs">
+      <DependentUpon>ActualizarAvion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarDestino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarDestino.Designer.cs">
+      <DependentUpon>ActualizarDestino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarPerfil.Designer.cs">
+      <DependentUpon>ActualizarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarPiloto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarPiloto.Designer.cs">
+      <DependentUpon>ActualizarPiloto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarVuelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaAdmin\ActualizarVuelos.Designer.cs">
+      <DependentUpon>ActualizarVuelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaAdmin\CambioContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaAdmin\CambioContraseña.Designer.cs">
+      <DependentUpon>CambioContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="VistaAdmin\Registro_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VistaAdmin\Registro_Usuario.Designer.cs">
       <DependentUpon>Registro_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaAdmin\VerPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaAdmin\VerPerfil.Designer.cs">
+      <DependentUpon>VerPerfil.cs</DependentUpon>
     </Compile>
     <Compile Include="VistaAdmin\VistaAdmin.cs">
       <SubType>Form</SubType>
@@ -100,30 +163,97 @@
     <Compile Include="VistaAdmin\VistaAdmin.Designer.cs">
       <DependentUpon>VistaAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="VistaUsuario\frm_user.cs">
+    <Compile Include="VistaUsuario\CambioContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VistaUsuario\frm_user.Designer.cs">
-      <DependentUpon>frm_user.cs</DependentUpon>
+    <Compile Include="VistaUsuario\CambioContraseña.Designer.cs">
+      <DependentUpon>CambioContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaUsuario\InsertarPiloto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaUsuario\InsertarPiloto.Designer.cs">
+      <DependentUpon>InsertarPiloto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaUsuario\InsertarVuelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaUsuario\InsertarVuelos.Designer.cs">
+      <DependentUpon>InsertarVuelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaUsuario\InsertarVuelosDestino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaUsuario\InsertarVuelosDestino.Designer.cs">
+      <DependentUpon>InsertarVuelosDestino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaUsuario\Paises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaUsuario\Paises.Designer.cs">
+      <DependentUpon>Paises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaUsuario\VistaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaUsuario\VistaUsuario.Designer.cs">
+      <DependentUpon>VistaUsuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MenuLogin.resx">
       <DependentUpon>MenuLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OlvideContraseña.resx">
+      <DependentUpon>OlvideContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="VistaAdmin\ActualizarAvion.resx">
+      <DependentUpon>ActualizarAvion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaAdmin\ActualizarDestino.resx">
+      <DependentUpon>ActualizarDestino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaAdmin\ActualizarPerfil.resx">
+      <DependentUpon>ActualizarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaAdmin\ActualizarPiloto.resx">
+      <DependentUpon>ActualizarPiloto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaAdmin\ActualizarVuelos.resx">
+      <DependentUpon>ActualizarVuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaAdmin\CambioContraseña.resx">
+      <DependentUpon>CambioContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaAdmin\Registro_Usuario.resx">
       <DependentUpon>Registro_Usuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VistaAdmin\VerPerfil.resx">
+      <DependentUpon>VerPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaAdmin\VistaAdmin.resx">
       <DependentUpon>VistaAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaUsuario\CambioContraseña.resx">
+      <DependentUpon>CambioContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaUsuario\InsertarPiloto.resx">
+      <DependentUpon>InsertarPiloto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaUsuario\InsertarVuelos.resx">
+      <DependentUpon>InsertarVuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaUsuario\InsertarVuelosDestino.resx">
+      <DependentUpon>InsertarVuelosDestino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaUsuario\Paises.resx">
+      <DependentUpon>Paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaUsuario\VistaUsuario.resx">
+      <DependentUpon>VistaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -169,6 +299,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\userIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avion2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avion3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avion4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avion5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\primary-logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piloto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfilIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfilIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\el mundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paisesMundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizaavion.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

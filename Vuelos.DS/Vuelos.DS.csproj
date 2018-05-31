@@ -65,10 +65,26 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>BD.settings</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAvion.cs" />
+    <Compile Include="Interfaces\IDestino.cs" />
+    <Compile Include="Interfaces\IPiloto.cs" />
+    <Compile Include="Interfaces\IPIlotoLicencia.cs" />
     <Compile Include="Interfaces\IRol.cs" />
+    <Compile Include="Interfaces\ITipoLicencia.cs" />
+    <Compile Include="Interfaces\ITipoVuelo.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
+    <Compile Include="Interfaces\IVuelos.cs" />
+    <Compile Include="Interfaces\IVuelosDestino.cs" />
+    <Compile Include="Metodos\MAvion.cs" />
+    <Compile Include="Metodos\MDestino.cs" />
+    <Compile Include="Metodos\MPiloto.cs" />
+    <Compile Include="Metodos\MPilotoLicencia.cs" />
+    <Compile Include="Metodos\MTipoLicencia.cs" />
+    <Compile Include="Metodos\MTipoVuelo.cs" />
     <Compile Include="Metodos\MUsuario.cs" />
     <Compile Include="Metodos\MRol.cs" />
+    <Compile Include="Metodos\MVuelos.cs" />
+    <Compile Include="Metodos\MVuelosDestino.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

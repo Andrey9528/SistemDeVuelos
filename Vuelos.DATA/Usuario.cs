@@ -9,8 +9,6 @@ namespace Vuelos.DATA
 {
    public class Usuario
     {
-        
-       
         public int id_user { get; set; }
         public int id_rol { get; set; }
         public string Nombre { get; set; }

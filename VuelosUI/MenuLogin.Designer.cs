@@ -61,6 +61,7 @@
             this.lkb_olvide.TabIndex = 14;
             this.lkb_olvide.TabStop = true;
             this.lkb_olvide.Text = "Olvidé Contraseña";
+            this.lkb_olvide.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkb_olvide_LinkClicked);
             // 
             // metroLabel1
             // 
@@ -153,7 +154,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::VuelosUI.Properties.Resources.images;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(332, 53);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(419, 205);
